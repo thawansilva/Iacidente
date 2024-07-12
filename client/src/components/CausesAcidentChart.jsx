@@ -62,14 +62,10 @@ export const CausesAcidentChart = ({ data }) => {
     borderRadius: 10,
   };
   return (
-    <div className="relative px-6 py-3 bg-gray-200 rounded-2xl">
+    <div className="relative z-0 px-6 py-3 bg-gray-200 rounded-2xl">
       {data && (
         <>
-          <p
-            className="absolute font-bold text-center top-[44%] left-[26%] text-2xl w-4/5 max-w-[170px]
-            
-          "
-          >
+          <p className="absolute font-bold text-center top-[44%] left-[26%] text-2xl w-4/5 max-w-[170px] -z-[1]">
             {percentageValue(data.causes[0][1], data.quant_acidents)}% <br />{" "}
             <span className="inline-block w-3/5 text-xs font-normal text-gray-600">
               {data.causes[0][0]}

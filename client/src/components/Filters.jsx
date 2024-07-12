@@ -8,7 +8,7 @@ export function Filters() {
     yearsOptions,
     regionsOptions,
     stateOptions,
-    filters,
+    filters: { year, region, state },
     dispatch,
     handleFilterSubmit,
   } = useContext(FormInputContext);
@@ -29,7 +29,7 @@ export function Filters() {
             id="year"
             className="text-black"
             options={yearsOptions}
-            value={filters.year}
+            value={year}
             onChange={(target) => handleFormChange("year", target)}
           />
         </label>
@@ -40,23 +40,24 @@ export function Filters() {
             id="region"
             className="text-black"
             options={regionsOptions}
-            value={filters.region}
+            value={region}
             onChange={(target) => handleFormChange("region", target)}
           />
         </label>
-        {filters.region?.value != "todas" && (
+        {state && (
           <label htmlFor="state" className="block my-2">
             Selecione um estado do Brasil:
             <Select
               name="state"
               id="state"
               className="text-black"
-              options={stateOptions[filters.region.value]}
-              value={filters.state?.[0]}
+              options={stateOptions[region.value]}
+              value={state?.[0]}
               onChange={(target) => handleFormChange("state", target)}
             />
           </label>
         )}
+
         <button className="w-full py-2 font-bold text-black duration-300 ease-in-out bg-blue-200 rounded-lg hover:bg-blue-400">
           {isFetching ? (
             <div role="status">

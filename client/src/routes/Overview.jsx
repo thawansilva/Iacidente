@@ -14,7 +14,7 @@ export function Overview() {
   const { trafficData, isFetching, error } = useContext(TrafficDataContext);
   return (
     <div>
-      <h1 className="pb-2 text-3xl border-b-2 md:text-4xl">Visão Geral</h1>
+      <h1 className="text-2xl  w-fit">Visão Geral</h1>
       <div className="mt-2">
         {error && <div>{error}</div>}
         {trafficData && (
@@ -26,7 +26,7 @@ export function Overview() {
               </p>
             )}
             {trafficData.year == time.getFullYear() && (
-              <p className="p-3 mb-3 bg-red-400 rounded-xl">
+              <p className="p-3 mb-3 mr-5 bg-red-400 rounded-xl">
                 Os dados de {trafficData.year} estão atualizados até o mês de{" "}
                 <span className="font-bold">
                   {getMonthByNum(time.getMonth())}

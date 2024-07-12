@@ -11,9 +11,11 @@ export function Root() {
   const [trafficData, setTrafficData] = useState(null);
   const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState(null);
+
   const yearsOptions = getYears();
   const regionsOptions = getRegions();
   const stateOptions = getStates();
+
   const [filters, dispatch] = useReducer(filterReducer, {
     year: yearsOptions.slice(-1)[0],
     region: regionsOptions[0],
@@ -26,8 +28,8 @@ export function Root() {
   const fetchAPI = async () => {
     setIsFetching(true);
     await fetch(
-      `http://localhost:5000/visaogeral?year=${filters.year?.value}&region=${
-        filters.region?.value
+      `http://localhost:5000/visaogeral?year=${filters.year.value}&region=${
+        filters.region.value
       }${
         filters.region?.value != "todas" ? `&state=${filters.state?.value}` : ""
       }`,
@@ -39,6 +41,7 @@ export function Root() {
         setIsFetching(false);
       });
   };
+
   const handleFilterSubmit = (e) => {
     e.preventDefault();
     fetchAPI();
