@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from helpers import getTrafficData
+from traffic_data import get_traffic_data
 
 app = Flask(__name__)
 CORS(app)
@@ -12,7 +12,7 @@ def visaogeral():
     region = request.args.get("region")
     state = request.args.get("state")
     if int(year) > 2006:
-        data = getTrafficData(year, region, state)
+        data = get_traffic_data(year, region, state)
     return jsonify(data)
 
 if __name__ == '__main__':
