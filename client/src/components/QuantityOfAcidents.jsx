@@ -1,4 +1,3 @@
-import React from "react";
 import carBurst from "../assets/img/icons/car-burst.svg";
 import { formatValue } from "../assets/js/Helpers";
 

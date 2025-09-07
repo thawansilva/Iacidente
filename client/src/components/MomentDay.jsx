@@ -1,9 +1,8 @@
-import React from "react";
 import sun from "../assets/img/icons/sun.svg";
 import { percentageValue } from "../assets/js/Helpers";
 
 export const MomentDay = ({ data }) => {
-  let percentage = percentageValue(data?.momentDay[1], data?.quant_acidents);
+  let percentage = percentageValue(data?.moment_day[1], data?.quant_acidents);
 
   return (
     data && (
@@ -14,7 +13,7 @@ export const MomentDay = ({ data }) => {
         <div className="mt-2 ">
           <span className="text-2xl font-bold">{percentage}%</span>
           <p className="text-sm text-gray-600">
-            dos acidentes ocorreram em {data.momentDay[0].toLowerCase()}
+            dos acidentes ocorreram em {data.moment_day[0].toLowerCase()}
           </p>
         </div>
       </div>

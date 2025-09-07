@@ -20,7 +20,10 @@ export const getYears = () => {
   const dataCurrent = new Date();
   let currentYear = dataCurrent.getFullYear();
   let years = [];
-  for (let initialYear = 2007; initialYear <= currentYear; initialYear++) {
+  //for (let initialYear = 2007; initialYear <= currentYear; initialYear++) {
+  //years.push({ value: String(initialYear), label: String(initialYear) });
+  //}
+  for (let initialYear = 2007; initialYear <= 2024; initialYear++) {
     years.push({ value: String(initialYear), label: String(initialYear) });
   }
   return years;

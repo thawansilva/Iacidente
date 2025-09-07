@@ -1,0 +1,36 @@
+export function HomeDescription() {
+  return (
+    <div className="mt-4">
+      <p>
+        Neste dashboard você terá acesso a informações sobre acidentes que
+        ocorrem em rodovias federais como:
+      </p>
+      <ul className="ml-5 list-disc">
+        <li>Quantidade de acidentes ocorridos</li>
+        <li>As principais causas de acidentes</li>
+        <li>Os estados com maiores número de acidentes</li>
+        <li>
+          Classificação dos acidentes a respeito da presença ou não de vítimas
+          feridas/fatais
+        </li>
+        <li>Momento do dia em que os acidentes ocorrem</li>
+        <li>Condições metereológica no momento do acidente</li>
+        <li>Em qual zona os acidentes mais ocorrem</li>
+      </ul>
+      <p className="mt-3 ">
+        Base de dados: BAT (Boletim de Acidentes de Transito)
+      </p>
+      <p>
+        Fonte:{" "}
+        <a
+          href="https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf"
+          referrerPolicy="no-referrer"
+          target="_blank"
+          className="text-gray-600 hover:underline"
+        >
+          Dados abertos da PRF
+        </a>
+      </p>
+    </div>
+  );
+}

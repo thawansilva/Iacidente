@@ -11,8 +11,10 @@ LIST_REGION = {
     "centro-oeste": ["DF", "GO", "MS", "MT"]
 }
                      
-def get_acidents_data(cur, state_placeholders, state_value):
+def get_acidents_data(year, state_placeholders, state_value, state):
     """ Get information about the accidents """
+    con = sqlite3.connect(f"../database/{year}.db")
+    cur = con.cursor()
     quant_acidents = cur.execute('SELECT COUNT(*) FROM data WHERE uf IN \
             ({})'.format(state_placeholders), state_value).fetchone()[0]
     
@@ -42,22 +44,7 @@ def get_acidents_data(cur, state_placeholders, state_value):
 
     acidents_data = {"quant_acidents": quant_acidents, "causes": acidents_causes, \
             "classification": acidents_category, "moment_day": moment_day, \
-            "weather_condition": weather_condition, "acident_zone": acident_zone, \
-            "year": int(year) }
-    return acidents_data
-
-def get_traffic_data(year = '2024', region = 'todas', state = None):
-    """ Get information about the road's traffic' """
-    con = sqlite3.connect(f"../database/{year}.db")
-    cur = con.cursor()
-    state = state or 'todos'
-    filtered_region = LIST_REGION[region]
-
-    state_placeholders = '?' if state != "todos" else ', '.join(["?"]*len(filtered_region))
-        
-    state_value = tuple(filtered_region) if state == "todos"  else (state, )
-    
-    acidents_data = get_acidents_data(cur, state_placeholders, state_value)
+            "weather_condition": weather_condition, "acident_zone": acident_zone}
 
     if state != 'todos':
         cities = cur.execute("SELECT DISTINCT municipio, COUNT(municipio) \
@@ -75,5 +62,19 @@ def get_traffic_data(year = '2024', region = 'todas', state = None):
         coordenates = cur.execute("SELECT latitude, longitude FROM data \
                 WHERE uf IN ({})".format(state_placeholders), state_value).fetchall()       
         acidents_data['coordenates'] = coordenates 
+    return acidents_data
+
+def get_traffic_data(year = '2024', region = 'todas', state = None):
+    """ Get information about the road's traffic' """
+    state = state or 'todos'
+    filtered_region = LIST_REGION[region]
+
+    state_placeholders = '?' if state != "todos" else ', '.join(["?"]*len(filtered_region))
+        
+    state_value = tuple(filtered_region) if state == "todos"  else (state, )
+    
+    acidents_data = get_acidents_data(year, state_placeholders, state_value, state)
+
+    acidents_data['year'] = int(year)
     
     return acidents_data

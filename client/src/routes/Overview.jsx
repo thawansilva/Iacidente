@@ -7,32 +7,19 @@ import { QuantityOfAcidents } from "../components/QuantityOfAcidents";
 import { MomentDay } from "../components/MomentDay";
 import { WeatherCondition } from "../components/WeatherCondition";
 import { AcidentZone } from "../components/AcidentZone";
-import { getMonthByNum } from "../assets/js/Helpers";
+import { LatestDataNotification } from "../pages/overview/LatestDataNotification";
 
 export function Overview() {
   const time = new Date();
   const { trafficData, isFetching, error } = useContext(TrafficDataContext);
   return (
     <div>
-      <h1 className="text-2xl  w-fit">Visão Geral</h1>
+      <h1 className="text-2xl w-fit">Visão Geral</h1>
       <div className="mt-2">
         {error && <div>{error}</div>}
         {trafficData && (
           <div>
-            {trafficData.year <= 2016 && (
-              <p className="p-3 mb-3 bg-red-400 rounded-xl">
-                Dados anteriores a 2016 não possuem dados de latitude e
-                longitude para o mapa de risco
-              </p>
-            )}
-            {trafficData.year == time.getFullYear() && (
-              <p className="p-3 mb-3 mr-5 bg-red-400 rounded-xl">
-                Os dados de {trafficData.year} estão atualizados até o mês de{" "}
-                <span className="font-bold">
-                  {getMonthByNum(time.getMonth())}
-                </span>
-              </p>
-            )}
+            <LatestDataNotification trafficData={trafficData} time={time} />
             <div
               className={`flex flex-wrap items-center justify-around gap-4 md:justify-start md:items-start ${
                 isFetching && "animate-pulse"

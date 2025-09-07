@@ -1,10 +1,9 @@
 import cloudSun from "../assets/img/icons/cloud-sun.svg";
-import React from "react";
 import { percentageValue } from "../assets/js/Helpers";
 
 export const WeatherCondition = ({ data }) => {
   let percentage = percentageValue(
-    data?.weatherCondition[1],
+    data?.weather_condition[1],
     data?.quant_acidents,
   );
 
@@ -23,7 +22,7 @@ export const WeatherCondition = ({ data }) => {
           <span className="text-2xl font-bold">{percentage}%</span>
           <p className="text-sm text-gray-600">
             dos acidentes ocorreram em condições de{" "}
-            {data.weatherCondition[0].toLowerCase()}
+            {data.weather_condition[0].toLowerCase()}
           </p>
         </div>
       </div>
