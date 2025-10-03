@@ -130,7 +130,7 @@ Example response:
 
 ## Data Source
 
-The data used in this application comes from [PRF (Federal highway Police)](https://www.themoviedb.org/)
+The data used in this application comes from [PRF (Federal highway Police)](https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf)
 
 ## Author
 
