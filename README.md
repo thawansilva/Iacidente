@@ -2,7 +2,7 @@
 
 A web application that analyzes and displays data about accidents on federal highways in Brazil through interactive charts and visualizations.
 
-<video src="https://github.com/thawansilva/Iacidente/tree/main/client/src/assets/video/Iacidente.mp4" width="450" />
+[![Watch the video](./client/src/assets/img/iacidente.png)](https://youtu.be/dLbmqlrwums)
 
 ## Project Structure
 
