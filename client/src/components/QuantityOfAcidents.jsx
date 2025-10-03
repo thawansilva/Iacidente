@@ -1,5 +1,5 @@
 import carBurst from "../assets/img/icons/car-burst.svg";
-import { formatValue } from "../assets/js/Helpers";
+import { formatValue } from "../assets/js/HelpersFunctions.js";
 
 export const QuantityOfAcidents = ({ data }) => {
   return (

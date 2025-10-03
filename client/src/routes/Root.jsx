@@ -3,7 +3,7 @@ import { NavigationBar } from "../components/NavigationBar";
 import { Outlet } from "react-router-dom";
 import { FormInputContext } from "../contexts/FormInputContext";
 import { TrafficDataContext } from "../contexts/TrafficDataContext";
-import { getRegions, getStates, getYears } from "../assets/js/Helpers";
+import { getRegions, getStates, getYears } from "../assets/js/HelpersFunctions.js";
 import { filterReducer } from "../reducers/FilterFormReducer";
 
 export function Root() {

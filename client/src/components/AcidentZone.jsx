@@ -1,6 +1,6 @@
 import tractor from "../assets/img/icons/tractor.svg";
 import city from "../assets/img/icons/city.svg";
-import { percentageValue } from "../assets/js/Helpers";
+import { percentageValue } from "../assets/js/HelpersFunctions.js";
 
 export const AcidentZone = ({ data }) => {
   let percentage = percentageValue(data?.acident_zone[1], data?.quant_acidents);

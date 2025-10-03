@@ -8,7 +8,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { percentageValue } from "../assets/js/Helpers";
+import { percentageValue } from "../assets/js/HelpersFunctions.js";
 ChartJS.register(
   CategoryScale,
   LinearScale,

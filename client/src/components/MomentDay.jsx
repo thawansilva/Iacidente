@@ -1,5 +1,5 @@
 import sun from "../assets/img/icons/sun.svg";
-import { percentageValue } from "../assets/js/Helpers";
+import { percentageValue } from "../assets/js/HelpersFunctions.js";
 
 export const MomentDay = ({ data }) => {
   let percentage = percentageValue(data?.moment_day[1], data?.quant_acidents);

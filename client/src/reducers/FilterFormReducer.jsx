@@ -1,4 +1,4 @@
-import { getStates } from "../assets/js/Helpers";
+import { getStates } from "../assets/js/HelpersFunctions.js";
 
 const stateOptions = getStates();
 

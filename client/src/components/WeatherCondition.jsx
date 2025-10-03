@@ -1,5 +1,5 @@
 import cloudSun from "../assets/img/icons/cloud-sun.svg";
-import { percentageValue } from "../assets/js/Helpers";
+import { percentageValue } from "../assets/js/HelpersFunctions.js";
 
 export const WeatherCondition = ({ data }) => {
   let percentage = percentageValue(

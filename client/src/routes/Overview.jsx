@@ -19,7 +19,7 @@ export function Overview() {
         {error && <div>{error}</div>}
         {trafficData && (
           <div>
-            <LatestDataNotification trafficData={trafficData} time={time} />
+			{trafficData.year >= 2024 && <LatestDataNotification />}
             <div
               className={`flex flex-wrap items-center justify-around gap-4 md:justify-start md:items-start ${
                 isFetching && "animate-pulse"

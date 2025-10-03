@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { toggleSidebar } from "../assets/js/Helpers";
+import { toggleSidebar } from "../assets/js/HelpersFunctions.js";
 import { Filters } from "./Filters";
 
 export const NavigationBar = ({ toggleNavbar }) => {

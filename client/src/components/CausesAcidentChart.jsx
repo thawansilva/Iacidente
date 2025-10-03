@@ -1,6 +1,6 @@
 import { Chart as ChartJS, Tooltip, ArcElement, plugins } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { getGradientBlueHex, percentageValue } from "../assets/js/Helpers";
+import { getGradientBlueHex, percentageValue } from "../assets/js/HelpersFunctions.js";
 
 ChartJS.register(ArcElement, Tooltip, plugins);
 
