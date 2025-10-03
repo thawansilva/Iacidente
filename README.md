@@ -113,22 +113,22 @@ Example response:
 
 ## Project Structure
 
-- `client/`: # Frontend React application
+- `client/`: Frontend React application
   - `src/`:
-    - `assets/`: # Static assets (images, CSS and etc...)
+    - `assets/`: Static assets (images, CSS and etc...)
     - `components/`: Reusable React components
-    - `contexts/`: # React contexts
-    - `hooks/`: # Custom React hooks
-    - `pages/`: # Page components
-    - `reducers/`: # State management reducers
-    - `routes/`: # Route components
-    - `main.jsx/`: # Application entry point
-    - `Routes.jsx/`: # Route definitions
+    - `contexts/`: React contexts
+    - `hooks/`: Custom React hooks
+    - `pages/`: Page components
+    - `reducers/`: State management reducers
+    - `routes/`: Route components
+    - `main.jsx/`: Application entry point
+    - `Routes.jsx/`: Route definitions
   - `index.html/`:
-- `server/`: # Frontend React application
-  - `app.py`: # Main application file
-  - `traffic_data.py`: # Data processing logic
-- `database/`: # SQLite database files (2007-2024)
+- `server/`: Frontend React application
+  - `app.py`: Main application file
+  - `traffic_data.py`: Data processing logic
+- `database/`: SQLite database files (2007-2024)
 
 ## Data Source
 
