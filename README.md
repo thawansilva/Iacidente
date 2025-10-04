@@ -4,6 +4,8 @@ A web application that analyzes and displays data about accidents on federal hig
 
 [![Watch the video](./client/src/assets/img/iacidente.png)](https://youtu.be/dLbmqlrwums)
 
+[Figma Link](https://www.figma.com/design/cSaoCLiiI2ZgOSZ5o2Imt7/Design-Iacidente?node-id=25-2&t=6PAE3qYhr2oxJbrt-1)
+
 ## Project Structure
 
 The project is divided into two main parts:
