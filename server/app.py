@@ -6,12 +6,12 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
-@app.route("/visaogeral", methods=["GET"])
+@app.route("/visaogeral/")
 def visaogeral():
     year = request.args.get("year")
     region = request.args.get("region")
     state = request.args.get("state")
-    if int(year) > 2006:
+    if int(year) > 2006 and int(year) < 2025:
         data = get_traffic_data(year, region, state)
     return jsonify(data)
 
